@@ -1,13 +1,7 @@
 import pandas as pd
-def file_handling():
-    return
-def Data_cleaning():
-    return
-def Subsetting_Filtring():
-    return
 def New_Columns():
     # Load the CSV
-    df = pd.read_csv('data.csv')
+    df = pd.read_csv('C:\Pyhton Programming\Programming Project\Programming-Project-2025-2026\Data\data.csv')
     # 1. Calculate total compensation without benefits
     df['TotalCompensation'] = df['BasePay'] + df['OvertimePay'] + df['OtherPay']
     # 2. Calculate overtime percentage of base pay
@@ -59,8 +53,6 @@ def Summary_Statistics(df):
 
     # Percentiles
     percentiles = df['TotalPayBenefits'].quantile([0.25, 0.5, 0.75, 0.9, 0.95])
-def Grouping_Aggregation():
-    return
 def Joining():
     # ===== STEP 1: Create Agency Mapping (if needed) =====
     # Skip this if you already have agency_code.csv
@@ -87,7 +79,7 @@ def Joining():
         'Status': 'category'
     }
 
-    df_employees = pd.read_csv('your_file.csv', dtype=dtypes_main)
+    df_employees = pd.read_csv('C:\Pyhton Programming\Programming Project\Programming-Project-2025-2026\Data\data.csv', dtype=dtypes_main)
 
     # ===== STEP 3: Load Agency Codes =====
     df_agency_codes = pd.read_csv('agency_code.csv')
@@ -114,3 +106,9 @@ def Joining():
     # ===== STEP 6: Save =====
     merged_df.to_csv('merged_data.csv', index=False)
     print("\n✓ Merged data saved to 'merged_data.csv'")
+
+
+New_Columns()
+df=pd.read_csv('C:\Pyhton Programming\Programming Project\Programming-Project-2025-2026\Data\data.csv')
+Summary_Statistics(df)
+Joining()
