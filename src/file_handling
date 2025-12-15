@@ -1,0 +1,56 @@
+print("========== DATASET PREVIEW ==========")
+
+import os
+
+
+def process_file(data_path):
+    if not os.path.exists(data_path):
+        raise FileNotFoundError(f"Data file not found at: {data_path}")
+
+    with open(data_path, "r", encoding="utf-8") as file:
+        lines = file.readlines()
+
+    # Print first 5 lines
+    for i in range(min(5, len(lines))):
+        print(lines[i].rstrip("\n"))
+
+    # SEARCH FOR "chief"
+    print("\n========== SEARCH RESULTS FOR 'chief' ==========")
+
+    found = False
+    with open(data_path, "r", encoding="utf-8") as file:
+        for line in file:
+            if "chief" in line.lower():
+                print(line.strip())
+                found = True
+
+    if not found:
+        print("No results found for 'chief'.")
+
+    # EXTRACT 2 COLUMNS MANUALLY
+    print("\n========== EXTRACTED COLUMNS (JobTitle & BasePay) ==========")
+
+    with open(data_path, "r", encoding="utf-8") as file:
+        header = file.readline()  # Skip header line
+
+        for line in file:
+            line = line.strip()
+            parts = line.split(",")
+
+            if len(parts) > 3:
+                job_title = parts[2]
+                base_pay = parts[3]
+                print(f"Job Title: {job_title} | Base Pay: {base_pay}")
+
+    print("\n========== PART I COMPLETED SUCCESSFULLY ==========")
+
+
+def main():
+    # Simple hardcoded path - change this as needed
+    data_path = "Data/Data.csv"
+    
+    process_file(data_path)
+
+
+if __name__ == "__main__":
+    main()

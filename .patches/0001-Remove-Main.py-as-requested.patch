@@ -1,0 +1,36 @@
+From 052be5fd74424ded8b06aa2ca5601d864934aab0 Mon Sep 17 00:00:00 2001
+From: ahmedhasnaoui880-creator
+ <ahmedhasnaoui880-creator@users.noreply.github.com>
+Date: Thu, 11 Dec 2025 22:29:53 +0100
+Subject: [PATCH] Remove Main.py as requested
+
+---
+ src/Main.py | 16 ----------------
+ 1 file changed, 16 deletions(-)
+ delete mode 100644 src/Main.py
+
+diff --git a/src/Main.py b/src/Main.py
+deleted file mode 100644
+index 64a8a88..0000000
+--- a/src/Main.py
++++ /dev/null
+@@ -1,16 +0,0 @@
+-def file_handling():
+-    return
+-def Data_cleaning():
+-    return
+-def Subsetting_Filtring():
+-    return
+-def New_Columns():
+-    return
+-def Summary_Statistics():
+-    return
+-def Grouping_Aggregation():
+-    return
+-def Joining():
+-    return
+-def Interactive_Investigation_Script():
+-    return
+-- 
+2.52.0.windows.1
+
